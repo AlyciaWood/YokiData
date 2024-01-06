@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+}
+p{
+  margin-right: 10px;
+}
+.animated {
+  opacity: 0; /* Initialisez l'opacité à 0 pour l'effet de fondu */
+  transform: translateY(20px); /* Déplacez légèrement vers le bas au départ */
+
+  /* Ajoutez une transition pour une animation fluide */
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+/* Lorsque la classe 'animated' est ajoutée, les sections deviennent visibles */
+.animated.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/*-------------------NAV-------------------*/
+nav{
+    border-bottom: white solide 2px;
+}
+.container-fluid {
+    background-color: #222222;
+    color: white;
+    border-bottom: white solide 2px;
+  }
+.imgL{
+  width: 15%;
+}
+
+/*-------------------animation 1-------------------*/
+h3{
+    padding-bottom: 10px;
+    font-family: 'Permanent Marker', cursive;
+}
+.hauteur{
+  height: 75vh;
+}
+.baniere{
+  height: 25vh;
+  background-image: url(img/baniere.jpg);
+  background-size: cover;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+h1{
+  font-family: 'Permanent Marker', cursive;
+}
+
+/*-------------------video anime1-------------------*/
+  
+  .video-container {
+    position: relative;
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+  }
+  
+  .hover-video {
+    width: 100%;
+    height: auto;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .video-container:hover .hover-video {
+    filter: brightness(0.8); /* Assombrit la vidéo au survol, facultatif */
+    transform: scale(1.1); /* Ajustez la mise à l'échelle au survol selon vos besoins */
+  }
+  
+  .video-container:hover .hover-video::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('your-last-image.jpg') center/cover no-repeat; /* Remplacez 'your-last-image.jpg' par le chemin de votre dernière image */
+    z-index: 1;
+  }
+  
+
+/*-------------------partie 2------------------*/
+.graph2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    margin-top: 20px;
+    padding-right: 95px;
+}
+/*-------------------Carte------------------*/
+.interactive-container {
+  position: relative;
+  width: 45%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+
+.interactive-image {
+  width: 70%;
+  height: auto;
+  cursor: pointer;
+}
+.interactive-image:hover{
+  opacity: 50%;
+}
+.interactive-image2{
+  width: 53%;
+  height: auto;
+  cursor: pointer;
+}
+.interactive-image2:hover{
+  opacity: 50%;
+}
+.interactive-list {
+  display: flex;
+  height: 50vh;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  
+  width: 100%;
+  margin-top: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.interactive-list li {
+  padding: 10px;
+  
+}
+
+.hidden {
+  display: none;
+}
+.hidden2 {
+  display: none;
+}
+.hauteur2{
+  height: 100vh;
+}
+/*-------------------graphique Genre------------------*/
+svg{
+  margin: 10px;
+  width: 100%;
+  margin-left: 45px;
+}
+.marge{
+  margin-left: 20px;
+}
+/* -------------pop up----------------- */
+footer{
+  background-color: #222222;
+}
+footer h3{
+  color: #fff;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: white;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-family: 'Permanent Marker', cursive;
+}
+.button:hover {
+  opacity: 50%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h3 {
+  color: black;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}

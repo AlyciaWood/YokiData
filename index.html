@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Yoki Data</title>
+    <!-----------------lien bootstrap--------------------->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <!-----------------lien chart js--------------------->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-legend"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+    
+    <!-----------------lien scroll--------------------->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+</head>
+<body>
+  <script>
+    AOS.init();
+  </script>
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"
+  ></script>
+
+  <!---------------------nav----------------------------->
+
+  <nav class="navbar navbar-expand-lg p-0 text-light border-bottom position-fixed w-100 z-3" style="background-color: #222;" id="accueil">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#croissance"
+        ><img class="imgL" src="img/logo.png" alt=""
+      /></a>
+      <button
+        class="navbar-toggler text-light"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon text-light"></span>
+      </button>
+      <div
+        class="collapse navbar-collapse w-100 text-end"
+        id="navbarNavAltMarkup"
+      >
+        <div class="navbar-nav justify-content-end w-100">
+          <a class="nav-link text-light" href="#croissance">Croissance</a>
+          <a class="nav-link text-light" href="#impact">Impact</a>
+          <a class="nav-link text-light" href="#top">Top</a>
+          <a class="nav-link text-light" href="#genre">Genre</a>
+          <a class="nav-link text-light" href="#monde">Monde</a>
+
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!----------------------------------------------------->
+    <!---------------------Graph général--------------------------->
+    <div class="baniere" id="croissance">
+      <h1>L'univers manga</h1>
+    </div>
+    <div class="d-flex justify-content-center align-items-center w-100 hauteur"  data-aos="fade-down-right" data-aos-duration="2000">
+        <div class="w-50">
+            <h3>La Croissance fulgurante du manga et de la BD</h3>
+            <p>
+                    La présence et l'influence du manga et de la bande dessinée (BD) dans la consommation littéraire française connaissent une croissance significative. 
+                Au cours de la dernière décennie, cette évolution a quasiment doublé, marquant une expansion notable. 
+                Ce phénomène s'explique en partie par des facteurs tels que la crise du COVID-19, qui a engendré des changements dans les habitudes de consommation et a conduit un public plus 
+                large à se tourner vers des formes narratives visuelles et attrayantes comme le manga. <br/><br/>
+
+                Parallèlement, le manga a également bénéficié d'un développement international marqué. Son attrait transcende les frontières culturelles, attirant un public diversifié à 
+                l'échelle mondiale. Cette mondialisation a contribué à consolider la place du manga dans le paysage littéraire français, ajoutant une dimension interculturelle à la consommation 
+                de contenus narratifs. Ainsi, la popularité croissante du manga et de la BD représente un phénomène dynamique et en constante évolution, témoignant de l'adaptabilité de ces 
+                formes d'expression artistique aux préférences contemporaines du lectorat français. <br/>
+            </p>
+        </div>
+        <video id="myVideo" width="640" height="360">
+          <source src="img/graph.mp4" type="video/mp4">
+        </video>
+    </div>
+   
+    <script src="js/scriptG1.js"></script>
+    <!---------------------Graph tout vs bd manga comics etc---------------------------->
+    <div class="d-flex justify-content-center align-items-center w-100 flex-row hauteur2"  id="impact" data-aos="fade-down-left" data-aos-duration="2000">
+        <div class="d-flex flex-column h-100 w-50" >
+            <div class="graph2" id="trigger">
+                <canvas id="myChart" width="300" height="300"></canvas>
+            </div>
+            <div class="graph2"> 
+                <canvas id="myChart2" width="300" height="300"></canvas>
+            </div>
+            
+        </div>
+        <div class="d-flex justify-content-center flex-column w-50">
+            <h3>L'impact des mangas sur la consomation française</h3>
+            <p>Comme il est manifeste, la prédominance du manga dans la consommation culturelle française s'accroît de manière significative. En 2022, un constat marquant révèle qu'un livre sur sept vendus était un manga. Cette tendance indique une croissance considérable de l'intérêt des lecteurs pour ce genre. Notamment, de plus en plus de lecteurs s'initient au manga, souvent suite à leur expérience avec l'adaptation animée de la même œuvre.</br></br>
+
+              Cette influence grandissante du manga ne se limite pas seulement aux chiffres de vente, mais transcende également la manière dont les lecteurs français abordent la littérature. Les rayons des librairies sont devenus des reflets vivants de cette révolution culturelle, où des univers narratifs captivants, des personnages complexes et des thèmes universels trouvent leur place.</br></br>
+              
+              L'engouement pour le manga va au-delà des pages imprimées, car de nombreux passionnés découvrent initialement ces univers à travers les adaptations animées. Cette synergie entre les différentes formes d'expression artistique renforce l'influence du manga dans le paysage culturel français, créant une connexion puissante entre le monde de l'écrit et celui de l'animation.</br></br>
+              
+              En transformant la consommation littéraire, le manga sert de pont entre les cultures, offrant des récits diversifiés et des perspectives uniques. Ainsi, en 2022, le manga a démontré sa capacité à façonner l'évolution de la consommation littéraire en France, confirmant sa place prépondérante dans le paysage culturel contemporain.</p>
+        </div>
+    </div>
+    
+    <script src="js/scriptG2.js"></script>
+    <script src="js/scriptG3.js"></script>
+    <!---------------------Top---------------------------->
+    <div class="d-flex justify-content-center hauteur2" id="top" data-aos="zoom-in" data-aos-duration="2000">
+      <div class="interactive-container" id="interactive-container">
+        <h3>Top des ventes de manga en France</h3>
+        <img src="img/carteFr.jpg" alt="Image" class="interactive-image" id="interactive-image">
+        <ul class="interactive-list hidden" id="interactive-list">
+            <li>One Piece Tome 1</li>
+            <li>Spy X Family Tome 1</li>
+            <li>Naruto Tome 1</li>
+            <li>One Piece Tome 2</li>
+            <li>Spy X Family Tome 7</li>
+            <li>Naruto Tome 2</li>
+            <li>Spy X Family Tome 2</li>
+            <li>One Piece Tome 3</li>
+            <li>Naruto Tome 3</li>
+            <li>Spy X Family Tome 3</li>
+        </ul>
+      </div>
+      <div class="interactive-container" id="interactive-container">
+        <h3>Top des ventes de manga au Japon</h3>
+        <img src="img/carteJp.jpg" alt="Image" class="interactive-image2" id="interactive-image2">
+        <ul class="interactive-list hidden2" id="interactive-list2">
+            <li>Jujutsu Kaisen</li>
+            <li>Tokyo Revengers</li>
+            <li>Spy X Family</li>
+            <li>One Piece</li>
+            <li>My Hero Academia</li>
+            <li>Kingdom</li>
+            <li>Blue lock</li>
+            <li>Chainsaw Man</li>
+            <li>Do Not Say Mystery</li>
+            <li>Kaiju N°8</li>
+        </ul>
+      </div>
+    </div>
+    
+  <script src="js/scriptC1.js"></script>
+  <script src="js/scriptC2.js"></script>
+  <!---------------------Graph genre--------------------------->
+  <div class="d-flex justify-content-center align-items-center w-100 hauteur2" id="genre" data-aos="fade-down-right" data-aos-duration="2000">
+    <div class="w-50 marge">
+      <h3>Les différents genres</h3>
+      <p>
+        Le "shonen", genre préféré de nombreux adeptes du manga, se distingue par des récits dynamiques mettant en avant des héros masculins, souvent impliqués dans des aventures épiques et des combats palpitants. Il jouit d'une renommée mondiale et captive un public étendu, établissant sa position parmi les genres les plus lus. </br></br>
+
+À l'inverse, le "seinen" se caractérise par des histoires plus matures et complexes, attirant l'attention d'un public averti. Des œuvres emblématiques telles que "Berserk" sont classées dans cette catégorie, saluées comme des chefs-d'œuvre par la communauté manga pour leur profondeur narrative et leur ton provocant.</br></br>
+
+Les "shojo", centrés sur des héroïnes féminines et souvent axés sur des thèmes romantiques, occupent une place significative dans la consommation manga. Bien que moins dominant que le "shonen", le "shojo" se classe comme le deuxième genre le plus apprécié, offrant une variété d'histoires riches en émotions et en relations humaines qui captivent un public diversifié.</br></br>
+
+Parmi les autres genres, les "isekai" émergent comme une tendance majeure, transportant les protagonistes d'un monde ordinaire vers des univers fantastiques ou parallèles. Cette popularité croissante est alimentée en partie par le succès de séries comme "Sword Art Online", suscitant un intérêt croissant pour les récits isekai et leurs explorations captivantes de mondes alternatifs.</br></br>
+
+En parallèle, des genres plus matures, notamment le "seinen", s'adressent à un public adulte en proposant des récits nuancés et réalistes. Ces œuvres approfondies offrent des perspectives réfléchies sur divers sujets, élargissant la diversité des expériences narratives disponibles dans le monde du manga pour répondre aux goûts et aux préférences d'un large éventail de lecteurs.</br></br>
+      </p>
+    </div>
+    
+    <div id="chart-container" class="w-50"></div>
+  </div>
+  <script src="js/scriptG4.js"></script>
+  <!---------------------Graph monde--------------------------->
+  <div class="d-flex justify-content-center align-items-center w-100 hauteur2" id="monde" data-aos="fade-down-left" data-aos-duration="2000">
+    <div class="marge w-50">
+      <h3>Les chiffres dans le monde</h3>
+      <p>Après le Japon, qui domine le marché du manga avec des ventes impressionnantes atteignant 4,1 milliards de dollars, notre pays se positionne en tant que deuxième plus grand consommateur mondial de mangas. Nous sommes suivis de près par la Chine, puis par les États-Unis et l'Allemagne. Bien que nos chiffres ne puissent rivaliser avec ceux du Japon, ils demeurent néanmoins considérables pour l'industrie du manga. Cette place de choix au classement témoigne de la passion constante de notre population pour cet art narratif japonais, mettant en lumière l'ampleur internationale de l'engouement pour les mangas.</p>
+    </div>
+    <div id="bar"></div>
+  </div>
+  <script src="js/scriptG5.js"></script>
+  <footer class="d-flex justify-content-between align-items-center">
+    <h3 class="marge">© 2023 - Yoki Data</h3>
+	    <a class="button" href="#popup1"><h3>Mention Légale</h3></a>
+
+    <div id="popup1" class="overlay">
+      <div class="popup">
+        <h3>Mention Légale</h3>
+        <a class="close" href="#">&times;</a>
+        <div class="content">
+          <p class="fw-bold">Éditeur : </p> <p>Enora Tortech</p></br></br>
+          <p class="fw-bold">Hébergeur : </p> <p>Github</p></br></br>
+          <p class="fw-bold">RGPD:</p> <p>Le règlement général à la protection des données ne s'applique pas psuiqu'aucune donnée personnelle n'est traitée dans ce travail.</p></br></br>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
